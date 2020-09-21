@@ -53,7 +53,7 @@ returns     application/json
 
 @api.route("/", methods=["GET"])
 def testFunction():
-	ser = serial.serial('/dev/ttyACMO0')
+	ser = serial.Serial('/dev/ttyACMO0')
 	ser.write(b'a')
 
 	while(ser.read() != 'w'):
