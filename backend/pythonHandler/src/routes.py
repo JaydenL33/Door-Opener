@@ -10,10 +10,6 @@ import serial
 # The API Route when api:// is localhost:5000/ or 134.122.104.123:5000/
 
 api = Blueprint("api", __name__)
-ser = serial.serial('/dev/ttyACMO0')
-print(ser.name)
-ser.write(b'hello')
-ser.close()
 
 # Defining Serial Communication Port
 
@@ -58,6 +54,15 @@ returns     application/json
 
 @api.route("/", methods=["GET"])
 def testFunction():
+    ser = serial.serial('/dev/ttyACMO0')
+    ser.write(b'a')
+
+    while(ser.read() != 'w'):
+        pass
+
+    ser.write(b'b')
+    ser.close()
+
 
 
 
