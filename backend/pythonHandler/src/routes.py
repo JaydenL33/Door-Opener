@@ -62,12 +62,9 @@ def testFunction():
 	ser.write(b'b')
 	ser.close()
 
-
-
-
 	req = request.json
 	
-	return Response(res, status=200, mimetype="application/json")
+	return 'successful'
 
 
 
