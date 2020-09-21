@@ -51,15 +51,10 @@ returns     application/json
 
 """
 
-@api.route("/", methods=["GET"])
+@api.route("/", methods=["POST"])
 def testFunction():
 	ser = serial.Serial('/dev/ttyACMO0')
 	ser.write(b'a')
-
-	while(ser.read() != 'w'):
-		pass
-
-	ser.write(b'b')
 	ser.close()
 
 	req = request.json

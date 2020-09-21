@@ -6,8 +6,8 @@ from src import create_app
 
 server = create_app()
 
-Local = True
+Local = False
 if Local == False:
-    server.run(debug=False, host='', port=3030)
+    server.run(debug=False, host='192.168.50.131', port=3030)
 else:
     server.run(debug=False, host='localhost', port=3030)
