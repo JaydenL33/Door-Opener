@@ -53,11 +53,14 @@ returns     application/json
 
 @api.route("/", methods=["POST"])
 def testFunction():
+
 	ser = serial.Serial('/dev/ttyACMO0')
 	ser.write(b'a')
 	ser.close()
 
 	req = request.json
+	print(req)
+
 	
 	return 'successful'
 
