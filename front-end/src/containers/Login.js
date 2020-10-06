@@ -17,7 +17,7 @@ export default function Login() {
       email: email,
     };
     
-    axios.post('http://localhost:3030/', user)
+    axios.post('http://192.168.50.131:3030/', user)
     .then(function (response) {
       console.log(response);
     })
