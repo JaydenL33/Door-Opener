@@ -15,7 +15,7 @@ api = Blueprint("api", __name__)
 
 
 
-@api.route("/", methods=["GET"])
+@api.route("/", methods=["POST"])
 def testFunction():
 
 	ser = serial.Serial('/dev/ttyACM0')
