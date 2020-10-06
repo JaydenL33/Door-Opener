@@ -18,7 +18,7 @@ api = Blueprint("api", __name__)
 @api.route("/", methods=["GET"])
 def testFunction():
 
-	ser = serial.Serial('/dev/ttyACMO0')
+	ser = serial.Serial('/dev/ttyACM0')
 	ser.write(b'a')
 	ser.close()
 
